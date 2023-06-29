@@ -1,0 +1,200 @@
+                                        biggest of three numbers
+
+echo enter "n1" "n2" "n3"
+read n1 n2 n3
+if [ $n1 -gt $n2 ] && [ $n1 -gt $n3 ]
+then 
+echo n1 is the lagest number 
+elif [ $n2 -gt $n1 ] && [ $n2 -gt $n3 ]
+then 
+echo n2 is the largest number
+else 
+echo n3 is the largest number
+fi 
+
+
+
+                                        word present in str or not
+
+echo  enter string sperated by space
+read str
+echo  enter a word to search 
+read key 
+for word in $str
+do
+if [ $word = $key ]
+then
+echo word find
+exit 
+fi 
+echo 
+done 
+echo not found
+
+
+
+                                        choose color an d find
+
+echo enter a color red green black
+read color
+if [ $color = red ]
+then 
+echo you are lucky
+elif [ $color = green ]
+then 
+echo  your are cheerfull
+else 
+echo you are both
+fi
+
+
+
+                                        eligable to vote  or not
+
+echo enter your age 
+read age
+if [ $age -gt 17 ]
+then 
+echo you  are eligable
+else
+echo you are not
+fi
+
+
+
+                                        while loop
+
+i=10
+while [ $i -gt 0 ]
+do
+echo revarse oedr number $i
+i=$((i-1))
+done
+
+
+
+                                        use of until
+
+i=1;
+until [ $i -gt 15 ]
+do
+echo number $i
+i=$((i+1))
+done
+
+
+
+                                        positive or negative
+
+echo enter a number 
+read num 
+if [ $num -gt 0 ]
+then 
+echo positive number
+elif [ $num -lt 0 ]
+then 
+echo negative number
+else
+echo its a zero 
+fi
+
+
+
+                                        string operations
+
+a="kiran"
+b="kiran"
+if [ $a = $b ]
+then
+echo "$a = $b : string is equal"
+else
+echo "$a = $b ] string is not equal"
+fi
+if [ $a != $b ]
+then
+echo "$a != $b : notal equal"
+else
+echo "[ $a ==  $b ] : eqaul to "
+fi
+if [ -z $a ] 
+then
+echo " -z $a: lent is zero"
+else
+echo " -z $a: length is not zero"
+fi
+if [ -n $a ]
+then
+echo "-a $a : length is not zero"
+else
+echo "-a $a : length is zero"
+fi
+if [ $a ]
+then
+echo " $a : string is not empty"
+else
+echo " $a : string ise empty"
+fi
+
+
+
+                                        for loop 
+
+for i in 1 2 3 4
+do 
+echo welcome $i times
+done
+
+
+
+                                        three sides of traingle
+
+echo enter sides of traingle
+read a b c
+if [ $a = $b ] && [ $a = $c ] && [ $b = $c ]
+then 
+echo its a equilateral traingle 
+elif [ $b = $a ] || [ $b = $c ] || [ $a = $c ]
+then 
+echo its a isosceles traingle
+else 
+echo its a scanlne traingle 
+fi
+
+
+
+                                        factorial of given number
+
+echo enter a number a to find factorail
+read num
+fact=1
+while [ $num -gt 1 ]
+do 
+    fact=$(( fact*num ))
+    num=$(( num-1 ))
+done
+echo factorail is $fact
+
+
+
+                                        linear seacrch
+
+echo "Enter all elements separated by space:"
+read allelements
+echo "Enter an element to search:"
+read element
+found="notfound"
+
+for i in $allelements
+do
+  if [ "$i" = "$element" ]
+  then
+    echo "Successful search"
+    found="found"
+    break
+  fi
+done
+
+if [ "$found" = "notfound" ]
+then
+  echo "Unsuccessful search"
+fi
